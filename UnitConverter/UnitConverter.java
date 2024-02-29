@@ -54,20 +54,20 @@ public class UnitConverter {
                             System.out.println("2. Kelvin");
                             String input2 = sc.next();
 
-                            switch (input2) {
-                                case "1":
+                            flag2 = switch (input2) {
+                                case "1" -> {
                                     System.out.println("The temperature in Fahrenheit is " + converter.celsiusToFahrenheit(input1));
-                                    flag2 = true;
-                                    break;
-                                case "2":
+                                    yield true;
+                                }
+                                case "2" -> {
                                     System.out.println("The temperature in Kelvin is " + converter.celsiusToKelvin(input1));
-                                    flag2 = true;
-                                    break;
-                                default:
+                                    yield true;
+                                }
+                                default -> {
                                     System.out.println("invalid option, try again");
-                                    flag2 = false;
-                                    break;
-                            }
+                                    yield false;
+                                }
+                            };
                         } catch (Exception e) {
                             System.out.println("invalid input, please enter a valid number");
                             sc.next();
@@ -83,20 +83,20 @@ public class UnitConverter {
                             System.out.println("2. Kelvin");
                             String input2 = sc.next();
 
-                            switch (input2) {
-                                case "1":
+                            flag2 = switch (input2) {
+                                case "1" -> {
                                     System.out.println("The temperature in Celsius is " + converter.fahrenheitToCelsius(input1));
-                                    flag2 = true;
-                                    break;
-                                case "2":
+                                    yield true;
+                                }
+                                case "2" -> {
                                     System.out.println("The temperature in Kelvin is " + converter.fahrenheitToKelvin(input1));
-                                    flag2 = true;
-                                    break;
-                                default:
+                                    yield true;
+                                }
+                                default -> {
                                     System.out.println("Invalid input, please try again");
-                                    flag2 = false;
-                                    break;
-                            }
+                                    yield false;
+                                }
+                            };
                         } catch (Exception e) {
                             System.out.println("Invalid input, please enter a valid number");
                             sc.next();
@@ -112,20 +112,20 @@ public class UnitConverter {
                             System.out.println("2. Fahrenheit");
                             String input2 = sc.next();
 
-                            switch (input2) {
-                                case "1":
+                            flag2 = switch (input2) {
+                                case "1" -> {
                                     System.out.println("The temperature in Celsius is " + converter.kelvinToCelsius(input1));
-                                    flag2 = true;
-                                    break;
-                                case "2":
+                                    yield true;
+                                }
+                                case "2" -> {
                                     System.out.println("The temperature in Fahrenheit is " + converter.kelvinToFahrenheit(input1));
-                                    flag2 = true;
-                                    break;
-                                default:
+                                    yield true;
+                                }
+                                default -> {
                                     System.out.println("invalid input, please try again");
-                                    flag2 = false;
-                                    break;
-                            }
+                                    yield false;
+                                }
+                            };
                         } catch (Exception e) {
                             System.out.println("Invalid input, enter a valid number");
                             sc.next();
